@@ -7,11 +7,13 @@ const pool = new Pool({
   database: 'bootcampx'
 });
 
-pool.query(`
+const queryString = `
 SELECT id, name, cohort_id
 FROM students
 LIMIT 5;
-`)
+`;
+
+pool.query(queryString)
 .then(res => {
   console.log(res);
 })
